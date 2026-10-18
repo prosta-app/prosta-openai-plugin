@@ -29,7 +29,10 @@ booking changes. Public discovery does not require appointment access.
 Your chosen AI host—OpenAI for ChatGPT or Codex, or Anthropic for Claude—receives
 the tool results to answer your request. This transfer is part of using the
 integration. The host processes your conversation and returned data under its
-own account settings and privacy policy. Your host may retain chat history
+own account settings and privacy policy:
+[OpenAI Privacy Policy](https://openai.com/policies/privacy-policy/) or
+[Anthropic Privacy Policy](https://www.anthropic.com/legal/privacy).
+Your host may retain chat history
 separately from Prosta. Avoid unnecessary private information in searches or
 conversations; never provide passwords, OTPs, or access tokens in chat.
 
