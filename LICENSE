@@ -1,0 +1,65 @@
+Proprietary Software — All Rights Reserved
+
+Copyright © 2025 prosta.app. All rights reserved.
+
+This software and associated documentation (the "Software") are the proprietary
+property of prosta.app. The Software is not public, not open source, and is
+provided in confidence.
+
+No part of the Software may be reproduced, distributed, modified, reverse-
+engineered, or used in any form or by any means (including copying, hosting,
+or making derivative works) without the prior written permission of prosta.app.
+
+Unauthorized use, copying, or distribution of the Software is strictly
+prohibited and may result in legal action.
+
+For licensing inquiries: support@prosta.app
+
+prosta.app — https://prosta.app
+
+---
+
+Limited OpenAI Package Distribution Permission — Prosta 1.0.0
+
+Notwithstanding the preceding proprietary license's restrictions, Prosta grants
+the following limited permission for its genuine Prosta 1.0.0 customer-read
+OpenAI plugin package for https://www.prosta.app/api/mcp. This supplement
+prevails over the preceding restrictions only to the extent expressly stated
+below. All other restrictions and reserved rights remain unchanged.
+
+Covered files are only plugin.json, mcp.json,
+skills/prosta-discovery/SKILL.md, skills/prosta-appointments/SKILL.md, README.md,
+SECURITY.md, PRIVACY.md, assets/prosta-icon.svg, and LICENSE as distributed in that package.
+The included Prosta name and genuine logo artwork are covered solely for
+identifying and presenting this integration.
+
+Prosta and the GitHub organization prosta-app may reproduce and publicly
+distribute the covered package through
+https://github.com/prosta-app/prosta-openai-plugin and submit it to OpenAI's
+ChatGPT and Codex plugin directories. OpenAI may review, scan, store, host,
+display and distribute the covered package for that integration. End users may
+download, install and use the covered package to connect to Prosta through
+supported OpenAI clients. Necessary installation and normal client-operation
+copies are permitted. Copyright, ownership and this complete license notice
+must be retained with distributed copies.
+
+The package and its artwork remain proprietary. This is not an open-source
+license or a general permission to modify, sublicense or redistribute Prosta
+materials. This supplement covers only the OpenAI package; the separate Claude
+package has its own permission. It does not establish OpenAI approval or
+marketplace acceptance.
+
+This permission excludes Prosta's private monorepo, application source,
+frontend, mobile app, backend, database schema or data, customer information,
+credentials, private documentation and unrelated assets. It does not permit
+operating an independent Prosta service or publishing a modified package as
+Prosta. Service access remains subject to normal authentication, consent,
+authorization and the terms at https://www.prosta.app/terms.
+
+The Prosta name and included icon may identify this genuine integration in the
+specified repository, directories and clients. No other trademark permission
+or claim of endorsement by Prosta or OpenAI is granted.
+
+The private repository's root LICENSE is unchanged. All rights not expressly
+granted for this OpenAI package remain reserved.
+Licensing contact: https://www.prosta.app/support
