@@ -1,0 +1,7 @@
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "prosta"
+      description: "Prosta discovery, own appointments and personally approved booking proposals"
+      transport: "streamable_http"
+      url: "https://www.prosta.app/api/mcp"

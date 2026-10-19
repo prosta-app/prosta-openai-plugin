@@ -3,7 +3,14 @@
   "mcpServers": {
     "prosta": {
       "type": "streamable-http",
-      "url": "https://www.prosta.app/api/mcp"
+      "url": "https://www.prosta.app/api/mcp",
+      "extensions": {
+        "com.openai": {
+          "auth": {
+            "type": "mixed"
+          }
+        }
+      }
     }
   }
 }

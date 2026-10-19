@@ -1,72 +1,95 @@
-# Privacy for the Prosta connector
+# Privacy for the Prosta ChatGPT and Codex connector — 1.1.2
 
-This notice explains the Prosta connector's data flow alongside the
+This notice describes the Prosta 1.1.2 ChatGPT and Codex integration alongside the
 [Prosta privacy policy](https://www.prosta.app/privacy) and
-[terms](https://www.prosta.app/terms). It applies to the read-only Prosta
-integration you choose to connect in ChatGPT, Codex, or Claude.
-This supplement governs the connector-specific sharing and additional AI-host
-recipients described here; the base policy covers general Prosta use. General
-recipient descriptions in the base policy do not exclude the AI host you
-choose for this integration.
+[terms](https://www.prosta.app/terms). It governs the connector-specific sharing
+and additional AI-host recipient described here. It does not change the separate
+Claude package or the scope of the earlier read-only 1.0.0 package.
+
+The connected server controls which tools are available. Proposal-specific
+processing applies only when those tools are enabled and you give the required
+fresh consent. This notice does not activate processing or claim authenticated
+host testing is complete.
 
 ## What is shared and why
 
-Public discovery sends the task's search terms and selected public business,
-service, and professional identifiers, plus requested availability dates, to Prosta.
-Results contain the public
-business profile, published catalog information, professionals, and available
-times needed to answer the request. A host may provide a coarse city hint
-through its controlled metadata for a requested nearby search. The hint is
-optional; the connector does not request GPS coordinates or personal addresses.
+Public discovery sends search terms, selected public business, service and
+professional identifiers, and availability dates to Prosta. Results include
+public profiles, catalogs, professionals and available times. ChatGPT and Codex can supply
+an optional coarse city hint through controlled metadata; this integration does
+not request GPS coordinates or personal addresses.
 
-With your explicit Prosta consent for `appointments:read`, the connector also
-returns your own appointment information: booking identifiers and status,
-business and professional details, dates and times, services, duration, and
-prices. It uses your account identity internally to check access. Consent does
-not permit another customer's records, a business administration role, or
-booking changes. Public discovery does not require appointment access.
+With explicit appointments:read consent, your verified Prosta account can read
+its own current and past appointments: booking identifiers and status, business
+and professional details, services, dates/times, duration and prices. Existing
+private appointment notes are excluded. Account identity comes from Prosta
+sign-in; a matching host email or email typed in chat does not establish it.
+This is your regular Prosta account and history, not a new AI booking account.
 
-Your chosen AI host—OpenAI for ChatGPT or Codex, or Anthropic for Claude—receives
-the tool results to answer your request. This transfer is part of using the
-integration. The host processes your conversation and returned data under its
-own account settings and privacy policy:
-[OpenAI Privacy Policy](https://openai.com/policies/privacy-policy/) or
-[Anthropic Privacy Policy](https://www.anthropic.com/legal/privacy).
-Your host may retain chat history
-separately from Prosta. Avoid unnecessary private information in searches or
-conversations; never provide passwords, OTPs, or access tokens in chat.
+When enabled, booking proposal and status tools require fresh explicit consent for both
+appointments:read and appointments:write. An existing read-only grant does not
+upgrade automatically. Your selected OpenAI host sends a request UUID, operation, business or
+appointment ID, selected professional/services, and proposed date and time.
+Optional notes or a cancellation reason are only text you explicitly supply for
+that request. Those new notes/reason may be included in the proposal returned to
+ChatGPT and Codex; old appointment notes are never copied into it or returned. Avoid medical
+or other unnecessary private details in notes and conversations.
 
-## Access, expiry, and stored records
+When you use an enabled preparation tool, Prosta creates an immutable,
+account-bound proposal with the exact change and
+server-calculated total. Preparation does not reserve or alter an appointment.
+You personally review and approve or reject on Prosta with the same account.
+The server rechecks consent, ownership, snapshot, price and availability before
+the canonical appointment workflow executes. ChatGPT and Codex or a chat confirmation
+cannot perform that first-party decision. A successful action returns a minimal
+receipt of the appointment at commitment; a fresh appointment read provides the
+latest details. A pending appointment is not confirmed.
 
-You review the account, integration, and permission in Prosta before approving.
-The current connector configuration expires access tokens after five minutes,
-authorization codes after one minute, and unfinished consent interactions after
-ten minutes. Refresh credentials and connection sessions have a one-day
-provider lifetime. A recorded consent is valid for at most 30 days and may end
-sooner when revoked or when the associated session expires.
+OpenAI receives the inputs, tool results and text you place in ChatGPT and Codex to
+answer your request under its account settings and
+[privacy policy](https://openai.com/policies/privacy-policy/). This is an additional
+connector-specific recipient alongside the general Prosta policy. ChatGPT and Codex may
+retain conversations independently of Prosta. Never paste passwords, OTPs,
+authorization codes or access tokens into chat. Installing a package does not
+grant account access or approve a booking change.
 
-Expiry prevents use of the expired credential; it is not a promise that the
-stored record is physically deleted at that moment. Expired provider records
-are cleaned up in bounded batches during subsequent provider writes. Consent
-history remains until account deletion. This notice does not assert a separate
-logging retention duration or an immediate physical cleanup deadline.
+## Expiry and retained records
 
-MCP responses use `Cache-Control: private, no-store`. This HTTP instruction does
-not delete host conversations or override the host's retention controls.
-Ordinary Prosta booking records remain part of your Prosta account; connecting
-or disconnecting the integration does not delete your appointments.
+Proposals expire after ten minutes. Expiry ends approval eligibility; it does
+not physically delete the immutable request, proposal or receipt. These records
+remain with consent history until the relevant account or consent record is
+deleted. Revoking access blocks later use but does not itself promise to purge
+that history. Canonical appointments remain normal Prosta booking records.
+
+Current connector configuration expires access tokens after five minutes,
+authorization codes after one minute and unfinished consent interactions after
+ten minutes. Refresh credentials and connection sessions have a one-day provider
+lifetime. Consent is valid for at most 30 days and may end sooner through
+revocation or session expiry. Expired provider records are cleaned in bounded
+batches during subsequent provider writes. Expiry is not an immediate physical
+deletion promise; no separate logging retention deadline is asserted here.
+
+MCP responses use Cache-Control: private, no-store. This does not erase ChatGPT and Codex
+messages or override OpenAI's retention controls. Old chat cards remain
+snapshots. Prosta screens depend on their released realtime clients and
+connectivity; reconnecting refreshes missed changes.
 
 ## Your controls
 
-Remove access through Prosta Profile → Connected apps, then disconnect the
-integration in your AI host. Revocation blocks future private reads and removes
-the associated token family. It cannot erase records already returned to the
-host. Use that host's account and conversation controls for its retained data.
-To switch Prosta accounts, revoke the previous connection and sign in with the
-intended account before granting consent again.
+Remove delegated access in Prosta Profile → Connected apps, then disconnect the
+integration in ChatGPT and Codex. This blocks future private calls and removes its token
+family; it does not undo a committed booking or erase data already returned to
+ChatGPT and Codex. Use regular booking controls for subsequent changes and your host’s
+account/conversation controls for retained data. To switch accounts, revoke
+the previous connection and sign in with the intended account before consenting.
 
-Prosta's account-deletion workflow removes the account's connector provider
-state and consent history. For access, deletion, or privacy questions, contact
-[Prosta Support](https://www.prosta.app/support). Do not include credentials or
-customer records in a public repository issue. See [Security](./SECURITY.md)
-for private reporting guidance.
+Prosta account deletion removes connector provider state, consent history and
+related proposals/receipts through the account-deletion workflow. This connector
+does not support products, packages, deposits, payments or reference photos;
+use normal Prosta flows for those requests.
+
+For access, deletion or privacy questions, contact
+[Prosta Support](https://www.prosta.app/support) privately. Do not include customer
+records or credentials in public issues. See [Security](./SECURITY.md) for private
+reporting. This notice describes handling; it is not a claim of directory or
+independent compliance approval.
